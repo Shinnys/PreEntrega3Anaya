@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Calculadora de interés compuesto</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 section__calculator">
+                <h1>Interés compuesto</span></h1>
+
+                <!-- Formulario de ingreso -->
+                <div class="form" id="formulario">
+                    <div class="form__content">
+                        <div class="form__box">
+                            <input type="number" name="monto" id="monto" class="form__input" placeholder="Capital inicial">
+                            <label for="" class="form__label">Capital inicial</label>
+                            <div class="form__shadow"></div>
+                        </div>
+
+                        <div class="form__box">
+                            <select name="periodo" id="periodo" class="form__input select">
+                                <option value="mensual">mensual</option>
+                                <option value="trimestral">trimestral</option>
+                                <option value="cuatrimetral">cuatrimetral</option>
+                                <option value="bimestral">bimestral</option>
+                                <option value="anual">anual</option>
+                            </select>
+                            <label for="" class="form__label">Período de interés</label>
+                            <div class="form__shadow"></div>
+                        </div>
+
+                        <div class="form__box">
+                            <input type="number" name="interes" id="interes" class="form__input" placeholder="Tasa de interés anual">
+                            <label for="" class="form__label">Tasa de interés anual</label>
+                            <div class="form__shadow"></div>
+                        </div>
+
+                        <div class="form__box">
+                            <input type="number" name="tiempo" id="tiempo" class="form__input" placeholder="Numero de años">
+                            <label for="" class="form__label">Numero de años</label>
+                            <div class="form__shadow"></div>
+                        </div>
+
+                        <div class="form__buttons">
+                            <div class="form__button">
+                                <input type="submit" class="form__submit" id="btnCalcular" value="Calcular">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p><span class="fw-bold">Capital inicial:</span> monto de dinero que tiene disponible para invertir inicialmente.</p>
+                <p><span class="fw-bold">Período de interés:</span> cantidad de veces por año que se capitalizará el interés.</p>
+                <p><span class="fw-bold">Tasa de interés anual:</span> su tasa de interés anual estimada.</p>
+                <p><span class="fw-bold">Numero de años:</span> cantidad de tiempo, en años, que tiene previsto ahorrar.</p>
+            </div>
+
+            <div class="col-lg-8 section__info">
+                <p>Resumen de periodos</p>
+                <table class="table text-end" id="lista-tabla">
+                    <thead>
+                        <tr>
+                            <th scope="col">Periodo</th>
+                            <th scope="col">Capital Inicial</th>
+                            <th scope="col">Interés desvengado</th>
+                            <th scope="col">Interés acumulado</th>
+                            <th scope="col">Capital Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Agrega js -->
+                    </tbody>
+                </table>
+
+                <p>Resumen final</p>
+                <table class="table text-end" id="lista-resumen">
+                    <thead>
+                        <tr>
+                            <th scope="col">Capital Inicial</th>
+                            <th scope="col">Capital Final</th>
+                            <th scope="col">Intereses</th>
+                            <th scope="col">Frecuencia</th>
+                            <th scope="col">Interés por periodo</th>
+                            <th scope="col">Periodos</th>
+                        </tr>
+                    </thead>
+                    <tbody class="fw-bold">
+                        <!-- Agrega js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

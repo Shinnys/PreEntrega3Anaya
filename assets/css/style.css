@@ -1,0 +1,244 @@
+/** GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/** VARIABLES CSS */
+:root {
+    /** Colores */
+    --color-primary: #C6F277;
+    --color-secundary: #F4F5EF;
+    --color-black: #1D1D1D;
+    --color-white: #FFFFFF;
+
+    /** Colores */
+    /* --color-primary: #155BD5;
+    --color-secundary: #E2F1FF;
+    --color-black: #1D1D1D;
+    --color-white: #FFFFFF; */
+        
+    /** Fuentes y tipografía */
+    --font-family: 'Poppins', sans-serif;
+    --font-size-tiny: 0.75rem;
+}
+
+/** RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/** BASE */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: var(--color-black);
+    margin: 0px;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0px;
+    color: var(--color-black);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+/** Ocultar flechas input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/** CALCULADORA */
+.section__calculator {
+    background-color: var(--color-primary);
+    height: 100vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.section__calculator h1 {
+    text-align: center;
+    font-weight: 700;
+    padding: 1.5rem 0;
+}
+
+.section__calculator p {
+    margin: 0.5rem 1.5rem;
+    font-weight: 500;
+}
+
+/** FORMULARIO */
+.form {
+    display: grid;
+    margin: 3rem 1.5rem;
+}
+
+.form__content {
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+/** FORMULARIO INPUT */
+.form__box {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.form__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+}
+
+.form__input {
+    border: 0;
+    outline: none;
+    position: absolute;
+    border: 1px solid var(--color-black);
+    background-color: var(--color-secundary);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 18px;
+    transition: transform 0.3s;
+}
+
+.select {
+    padding-top: 18px !important;
+    padding-bottom: 0 !important;
+}
+
+.form__input::placeholder {
+    transition: opacity 0.5s;
+}
+
+.form__label {
+    border: 0;
+    outline: none;
+    z-index: 100;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: var(--font-size-tiny);
+    font-weight: 600;
+    transition: 0.2s;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/** Opacidad input */
+.form__input:focus::placeholder {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/** Mover input hacia arriba */
+.form__input:focus,
+.form__input:not(:placeholder-shown).form__input:not(:focus) {
+    transform: translate(-8px, -8px);
+    padding: 28px 18px 18px;
+    animation: input-animation 1s;
+}
+
+/** Mover label hacia arriba */
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+    opacity: 1;
+    top: 2px;
+    left: 12px;
+    transition: 0.3s;
+}
+
+/** Animacion de rebote */
+@keyframes input-animation {
+    0% {
+        transform: translate(0);
+    }
+    40% {
+        transform: translate(-9px, -9px);
+    }
+    60% {
+        transform: translate(-7px, -7px);
+    }
+}
+
+/** FORMULARIO BOTON */
+.form__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form__button {
+    background-color: var(--color-black);
+    margin: 1.5rem 0;
+}
+
+.form__submit {
+    border: 0;
+    outline: none;
+    padding: 0.875rem 3.5rem;
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    background-color: var(--color-secundary);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.form__submit:hover {
+    transform: translate(-6px, -6px);
+    /* background-color: var(--color-primary); */
+}
+
+/** RESULTADOS OUTPUT*/
+.section__info {
+    background-color: var(--color-secundary);
+    height: 100vh;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.section__info p {
+    font-weight: 600;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 1.75rem;
+}
